@@ -16,9 +16,7 @@ class Solution {
         if(up==1){
         var newArr = IntArray(res.size+1);
             newArr[0]=1;
-            for(i in 1 until res.size ){
-                newArr[i]=res[i-1];
-            }
+           
             res =newArr;
         }
         
