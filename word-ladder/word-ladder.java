@@ -1,6 +1,6 @@
 class Solution {
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
-            Queue<String> q = new LinkedList<>();
+        Queue<String> q = new LinkedList<>();
         q.offer(beginWord);
         
         int level = 1;
