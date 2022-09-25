@@ -1,7 +1,6 @@
 class MyCircularQueue {
     int size ;
     int[] arr;
-    boolean[] hasValueArr ;
     int selectedIndex;
     int insertPointer;
     int deletePointer;
@@ -10,7 +9,6 @@ class MyCircularQueue {
     public MyCircularQueue(int k) {
         size =k;
         arr = new int[size];
-        hasValueArr =new boolean[size];
         selectedIndex =0;
         insertPointer=-1;
         deletePointer=0;
@@ -24,7 +22,6 @@ class MyCircularQueue {
         else insertPointer++;
         
         arr[insertPointer] = value ;
-        hasValueArr[insertPointer] = true ;
         
 
         
@@ -34,7 +31,6 @@ class MyCircularQueue {
     
     public boolean deQueue() {
         if(isEmpty()) return false; 
-        hasValueArr[deletePointer]=false;
         
         if(deletePointer==size-1) deletePointer =0;
         else deletePointer ++;
@@ -46,17 +42,13 @@ class MyCircularQueue {
     public int Front() {
         if(isEmpty()) return -1;
 
-        if(hasValueArr[deletePointer])
             return arr[deletePointer];
-        return -1;
         
     }
     
     public int Rear() {
         if(isEmpty()) return -1;
-        if(hasValueArr[insertPointer])
             return arr[insertPointer];
-        return -1;
     }
     
     public boolean isEmpty() {
